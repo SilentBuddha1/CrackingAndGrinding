@@ -1,0 +1,17 @@
+.nav  {
+    margin-left: 150px;
+    margin-right: 150px;
+    display : flex;
+    justify-content: space-between;
+}
+
+.nav-right {
+    display: flex;
+    padding: 20px;
+}
+
+.logo { 
+    width: 100px;
+    height: 20px;
+    margin-top: 20px;
+}
