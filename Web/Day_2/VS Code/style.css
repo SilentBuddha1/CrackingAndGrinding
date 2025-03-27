@@ -1,0 +1,90 @@
+.body {
+    background-color: #0e0e0e;
+}
+
+.main {
+    padding : 20px 200px 0 200px;
+    background-color: #0e0e0e;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-left {
+    display: flex;
+    color : white;
+    justify-content: space-evenly;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-img {
+    height: 25px;
+    padding-right: 5px;
+}
+
+.logo-name {
+    font-size: 25px;
+
+}
+
+.list {
+    padding-left: 10px;
+}
+
+.paragraph {
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin : 10px;
+}
+
+.vs-body {
+    display: flex;
+    color : white;
+    justify-content: center;
+    margin: 50px;
+
+}
+
+.img-main {
+    height: 555px;
+    width: 600px;
+}
+
+.main-content {
+    margin: 50px 60px 20px 20px;
+}
+
+.free {
+    background-color: rgb(44, 43, 43);
+    border: white solid 1px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.code {
+    font-size: 40px;
+}
+
+.mac-btn {
+    height: 40px;
+    width: 170px;
+    border-radius: 5px;
+    color: white;
+    background-color: cornflowerblue;
+}
+
+.last-p {
+    font-size: 10px;
+    color : grey;
+}
+
+.first-p {
+    color : grey;
+}
