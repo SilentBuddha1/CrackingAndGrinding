@@ -18,3 +18,10 @@ function sums(n){
 
 const result = sums(100);
 console.log(result);
+
+function sumss(a,b){
+    return parseInt(a) + parseInt(b); //Safety purpose
+}
+
+let results = sumss("10",20);
+console.log(results);
