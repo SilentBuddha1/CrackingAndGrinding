@@ -1,7 +1,11 @@
 const fs = require("fs");
 
 function read(err, data){
-    console.log(data);
+    if(err){
+        console.log(err);
+    } else{
+        console.log(data);
+    }
 }
 
 fs.readFile("hello.txt", "utf-8", read); //third
