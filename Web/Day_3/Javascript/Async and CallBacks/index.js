@@ -13,6 +13,6 @@ fs.readFile("hello.txt", "utf-8", read); //third
 fs.readFile("how.txt", "utf-8", read); //fourth
 
 setTimeout(() => {
-    console.log("I am Fine..."); //first
+    console.log("I am Fine..."); //second
 }, 0)
-console.log("Done!"); //second
+console.log("Done!"); //first
