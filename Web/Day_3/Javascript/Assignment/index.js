@@ -1,6 +1,6 @@
-setTimeout(() => {
-    console.log("Finished...");
-}, 2000);
+// setTimeout(() => {
+//     console.log("Finished...");
+// }, 2000);
 
 function delay(ms){
     return new Promise(resolve => setTimeout(resolve, ms)); 
