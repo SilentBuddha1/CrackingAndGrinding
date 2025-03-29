@@ -7,3 +7,14 @@ function callback(){
 }
 
 setTimeoutPromisified(3000).then(callback);
+
+
+function waitfor4s(resolve){
+    setTimeout(resolve,4000);
+}
+
+function main(){
+    console.log("Hello World");
+}
+
+waitfor4s(main);
