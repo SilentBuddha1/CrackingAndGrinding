@@ -22,18 +22,25 @@
 
 //Promise Chaining
 
-function setTimeoutPromisified(duration) {
-  return new Promise(function (resolve) {
-    setTimeout(resolve, duration);
-  });
-}
+// function setTimeoutPromisified(duration) {
+//   return new Promise(function (resolve) {
+//     setTimeout(resolve, duration);
+//   });
+// }
 
-setTimeoutPromisified(1000).then(function () {
-  console.log("Hi");
-  return setTimeoutPromisified(3000).then(function () {
-    console.log("Hello");
-    return setTimeoutPromisified(3000).then(function () {
-      console.log("Print");
-    });
-  });
-});
+// setTimeoutPromisified(1000).then(function () {
+//   console.log("Hi");
+//   return setTimeoutPromisified(3000).then(function () {
+//     console.log("Hello");
+//     return setTimeoutPromisified(3000).then(function () {
+//       console.log("Print");
+//     });
+//   });
+// });
+
+
+//Sorting String
+let str = "Education";
+let a = str.toLowerCase().split("").sort().join("");
+console.log(a);
+console.log(str);
