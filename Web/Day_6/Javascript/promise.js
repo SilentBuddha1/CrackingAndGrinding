@@ -40,7 +40,7 @@
 
 
 //Sorting String
-let str = "Education";
-let a = str.toLowerCase().split("").sort().join("");
-console.log(a);
-console.log(str);
+// let str = "Education";
+// let a = str.toLowerCase().split("").sort().join("");
+// console.log(a);
+// console.log(str);
