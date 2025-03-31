@@ -20,7 +20,6 @@
 //     }, 3000)
 // },1000)
 
-
 //Promise Chaining
 
 function setTimeoutPromisified(duration) {
