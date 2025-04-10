@@ -56,9 +56,17 @@ const map = (arr, fn) => {
 
 //For Square
 
-const numbers = [1, 2, 3, 4];
+// const numbers = [1, 2, 3, 4];
 
-const squares = map(numbers, (n) => n * n);
+// const squares = map(numbers, (n) => n * n);
 
-console.log(squares);
+// console.log(squares);
+
+//Number to String Array
+
+const nums = [100, 200, 300];
+
+const asStrings = map(nums, (n) => n.toString());
+
+console.log(asStrings);
  
