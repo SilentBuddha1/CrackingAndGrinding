@@ -25,11 +25,20 @@
 
 //Simple Ways 
 
+// const number = [1,2,3,4,5,6,7,8,9,10];
+// let arr = [];
+
+// for(i = 0; i < number.length; i++ ){
+//     arr.push(number[i] * number[i]);
+// }
+
+// console.log(arr);
+
+
+//Filter
+
 const number = [1,2,3,4,5,6,7,8,9,10];
-let arr = [];
 
-for(i = 0; i < number.length; i++ ){
-    arr.push(number[i] * number[i]);
-}
+const answer = number.filter((i) => i % 2 == 0);
 
-console.log(arr);
+console.log(answer);
