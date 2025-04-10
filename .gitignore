@@ -1,0 +1,14 @@
+# Node
+node_modules/
+
+# React build
+build/
+
+# Environment
+.env
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
