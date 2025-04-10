@@ -37,8 +37,28 @@
 
 //Filter
 
-const number = [1,2,3,4,5,6,7,8,9,10];
+// const number = [1,2,3,4,5,6,7,8,9,10];
 
-const answer = number.filter((i) => i % 2 == 0);
+// const answer = number.filter((i) => i % 2 == 0);
 
-console.log(answer);
+// console.log(answer);
+
+
+//Map which take array and funtion as a input
+
+const map = (arr, fn) => {
+    const tran = [];
+    for(let i = 0; i < arr.length; i++){
+        tran.push(fn(arr[i]));
+    }
+    return tran;
+}
+
+//For Square
+
+const numbers = [1, 2, 3, 4];
+
+const squares = map(numbers, (n) => n * n);
+
+console.log(squares);
+ 
