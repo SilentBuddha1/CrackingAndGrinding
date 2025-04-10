@@ -15,8 +15,10 @@
 
 // console.log(Result);
 
-const number = [1,2,3,4,5];
+//Introducing Map in the Game
 
-const Result = number.map((i) => i * i );
+// const number = [1,2,3,4,5];
 
-console.log(Result);
+// const Result = number.map((i) => i * i );
+
+// console.log(Result);
