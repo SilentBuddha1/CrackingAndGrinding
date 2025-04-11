@@ -41,6 +41,28 @@ app.post("/signin", function(req,res) {
     console.log(user);
 })
 
+app.get("/me", function(req, res){
+    const token = req.headers.token;
+    let foundUser = null;
+
+    for(let i = 0; i < user.length; i++){
+        if(user[i].token == token){
+            foundUser = user[i];
+        }
+    }
+
+    if(foundUser){
+        res.json({
+            username: foundUser.username,
+            password: foundUser.password
+        })
+    } else{
+        res.json({
+            message: "Token Invalided...."
+        })
+    }
+})
+
 app.listen(3000, ()=>{
     console.log("Server is running in port 3000....");
 });
