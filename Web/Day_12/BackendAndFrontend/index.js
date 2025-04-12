@@ -22,7 +22,12 @@ function auth(req, res, next) {
   }
 }
 
-app.post("/signup", function (req, res) {
+function logger(req, res, next){
+  console.log(`${req.method} request came here`);
+  next();
+}
+
+app.post("/signup",logger, function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
 
@@ -43,7 +48,7 @@ app.post("/signup", function (req, res) {
   console.log(users);
 });
 
-app.post("/signin", function (req, res) {
+app.post("/signin", logger, function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
 
@@ -71,7 +76,7 @@ app.post("/signin", function (req, res) {
   console.log(users);
 });
 
-app.get("/me", auth, function (req, res) {
+app.get("/me", logger, auth, function (req, res) {
   let userFound = null;
 
   for (let i = 0; i < users.length; i++) {
