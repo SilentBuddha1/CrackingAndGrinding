@@ -16,6 +16,13 @@ const user = [];
 app.post("/signup", function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
+
+  if(user.find(u => u.username == username)){
+    return res.json({
+        message : "User already Exists..."
+    });
+  }
+
   user.push({
     username: username,
     password: password,
