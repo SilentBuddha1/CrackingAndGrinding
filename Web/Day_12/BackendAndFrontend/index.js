@@ -72,11 +72,10 @@ app.post("/signin", function (req, res) {
 });
 
 app.get("/me", auth, function (req, res) {
-  const username = req.username;
   let userFound = null;
 
   for (let i = 0; i < users.length; i++) {
-    if (users[i].username == username) {
+    if (users[i].username == req.username) {
       userFound = users[i];
     }
   }
