@@ -23,12 +23,12 @@ A simple full-stack web application that allows users to sign up, sign in, view 
 ---
 
 ## 📁 Project Structure
-
+```
 BackendAndFrontend/
 ├── public/
 │ └── index.html # Frontend code (HTML, CSS, JavaScript)
 ├── index.js. # Backend code (Node.js/Express)
 ├── package.json # Node.js dependencies and scripts
 └── README.md # Project documentation
-
+```
 ---
