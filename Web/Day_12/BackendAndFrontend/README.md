@@ -7,12 +7,14 @@ A simple full-stack web application that allows users to sign up, sign in, view 
 ## 🛠 Technologies Used
 
 ### Frontend
+
 - **HTML** – Structure of the app.
 - **CSS** – Teal & dark-themed styles.
 - **JavaScript** – Frontend logic & API interaction.
 - **Axios (v1.6.7)** – HTTP client via CDN.
 
 ### Backend
+
 - **Node.js** – JavaScript runtime.
 - **Express** – Web server framework.
 - **JWT (jsonwebtoken)** – Secure authentication with tokens.
@@ -22,10 +24,9 @@ A simple full-stack web application that allows users to sign up, sign in, view 
 
 ## 📁 Project Structure
 
-BackendAndFrontend/ 
-├── public/ 
-│ └── index.html # Frontend code (HTML, CSS, JavaScript) 
-├── index.js. # Backend code (Node.js/Express) 
-├── package.json # Node.js dependencies and scripts 
+BackendAndFrontend/
+├── public/
+│ └── index.html # Frontend code (HTML, CSS, JavaScript)
+├── index.js. # Backend code (Node.js/Express)
+├── package.json # Node.js dependencies and scripts
 └── README.md # Project documentation
-
