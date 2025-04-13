@@ -1,19 +1,7 @@
 <html>
   <head>
     <title>Backend and Frontend</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-    <script>
-        async function signup(){
-            const username = document.getElementById("signup-username").value;
-            const password = document.getElementById("signup-password").value;
-
-            await axios.post("http://localhost:3000/signup",{
-                username: username,
-                password: password
-            });
-            alert("You are signup...")
-        }
-    </script>
+    
   </head>
   <body>
     <div>
@@ -24,8 +12,8 @@
     </div>
     <div>
         <h1>Signin</h1>
-        <input type="text" name="Username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
+        <input id="signin-username" type="text" name="Username" placeholder="Username">
+        <input id="signin-password" type="password" name="password" placeholder="Password">
         <button onclick="signin()">Signin</button>
     </div>
     <div>
@@ -36,4 +24,30 @@
         <button onclick="logout()">Logout</button>
     </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        async function signup(){
+            const username = document.getElementById("signup-username").value;
+            const password = document.getElementById("signup-password").value;
+
+            await axios.post("http://localhost:3000/signup",{
+                username: username,
+                password: password
+            });
+            alert("You are signed up");
+        }
+
+        async function signin(){
+            const username = document.getElementById("signin-username").value;
+            const password = document.getElementById("signin-password").value;
+
+           const response = await axios.post("http://localhost:3000/signin",{
+                username: username,
+                password: password
+            });
+
+            localStorage.setItem("token", response.data.token);
+            alert("You are signed in");
+        }
+    </script>
 </html>
