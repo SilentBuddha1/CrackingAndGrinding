@@ -56,8 +56,15 @@
                     token: localStorage.getItem("token")
                 }
             })
-            document.getElementById("information").innerHTML = "Username: " + response.data.username + "    Password: " + response.data.password
+            document.getElementById("information").innerHTML = "Username: " + response.data.username + "    Password: " + response.data.password;
         }
+
+        function logout() {
+            localStorage.removeItem("token");  
+            alert("You have been logged out.");
+            document.getElementById("information").innerHTML = "";
+        }
+
         getUserInfo();
     </script>
 </html>
