@@ -1,70 +1,193 @@
 <html>
   <head>
     <title>Backend and Frontend</title>
-    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #2e94a6;
+        color: #fff;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .form-container {
+        display: flex;
+        width: 100%;
+        max-width: 800px;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+
+      .signup-form,
+      .signin-form {
+        width: 45%;
+        background-color: #1a1a1a;
+        padding: 40px;
+        border: 1px solid #fff;
+        border-radius: 8px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        text-align: center;
+        color: #fff;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        background-color: #333;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 16px;
+      }
+
+      input::placeholder {
+        color: #ccc;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #fff;
+        color: #000;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #ccc;
+      }
+
+      .info-container {
+        width: 100%;
+        max-width: 800px;
+        background-color: #1a1a1a;
+        padding: 20px;
+        border: 1px solid #fff;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .logout-container {
+        width: 100%;
+        max-width: 800px;
+        text-align: center;
+      }
+
+      #information {
+        font-size: 18px;
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
-    <div>
+    <div style="display: flex; gap: 100px; margin: 50 0 100 0; padding: 20px">
+      <div>
         <h1>Signup</h1>
-        <input id="signup-username" type="text" name="Username" placeholder="Username">
-        <input id="signup-password" type="password" name="password" placeholder="Password">
+        <input
+          id="signup-username"
+          type="text"
+          name="Username"
+          placeholder="Username"
+        />
+        <input
+          id="signup-password"
+          type="password"
+          name="password"
+          placeholder="Password"
+        />
         <button onclick="signup()">Signup</button>
-    </div>
-    <div>
+      </div>
+      <div>
         <h1>Signin</h1>
-        <input id="signin-username" type="text" name="Username" placeholder="Username">
-        <input id="signin-password" type="password" name="password" placeholder="Password">
+        <input
+          id="signin-username"
+          type="text"
+          name="Username"
+          placeholder="Username"
+        />
+        <input
+          id="signin-password"
+          type="password"
+          name="password"
+          placeholder="Password"
+        />
         <button onclick="signin()">Signin</button>
+      </div>
     </div>
-    <div>
+    <div style="display: flex; flex-direction: column; gap: 50px;">
+      <div>
         <h1>User Information</h1>
         <div id="information"></div>
-    </div>
-    <div>
+      </div>
+      <div>
         <button onclick="logout()">Logout</button>
+      </div>
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-    <script>
-        async function signup(){
-            const username = document.getElementById("signup-username").value;
-            const password = document.getElementById("signup-password").value;
+  <script>
+    async function signup() {
+      const username = document.getElementById("signup-username").value;
+      const password = document.getElementById("signup-password").value;
 
-            await axios.post("http://localhost:3000/signup",{
-                username: username,
-                password: password
-            });
-            alert("You are signed up");
-        }
+      await axios.post("http://localhost:3000/signup", {
+        username: username,
+        password: password,
+      });
+      alert("You are signed up");
+    }
 
-        async function signin(){
-            const username = document.getElementById("signin-username").value;
-            const password = document.getElementById("signin-password").value;
+    async function signin() {
+      const username = document.getElementById("signin-username").value;
+      const password = document.getElementById("signin-password").value;
 
-           const response = await axios.post("http://localhost:3000/signin",{
-                username: username,
-                password: password
-            });
+      const response = await axios.post("http://localhost:3000/signin", {
+        username: username,
+        password: password,
+      });
 
-            localStorage.setItem("token", response.data.token);
-            alert("You are signed in");
-        }
+      localStorage.setItem("token", response.data.token);
+      alert("You are signed in");
+    }
 
-        async function getUserInfo(){
-           const response = await axios.get("http://localhost:3000/me",{
-                headers: {
-                    token: localStorage.getItem("token")
-                }
-            })
-            document.getElementById("information").innerHTML = "Username: " + response.data.username + "    Password: " + response.data.password;
-        }
+    async function getUserInfo() {
+      const response = await axios.get("http://localhost:3000/me", {
+        headers: {
+          token: localStorage.getItem("token"),
+        },
+      });
+      document.getElementById("information").innerHTML =
+        "Username: " +
+        response.data.username +
+        "    Password: " +
+        response.data.password;
+    }
 
-        function logout() {
-            localStorage.removeItem("token");  
-            alert("You have been logged out.");
-            document.getElementById("information").innerHTML = "";
-        }
+    function logout() {
+      localStorage.removeItem("token");
+      alert("You have been logged out.");
+      document.getElementById("information").innerHTML = "";
+    }
 
-        getUserInfo();
-    </script>
+    getUserInfo();
+  </script>
 </html>
