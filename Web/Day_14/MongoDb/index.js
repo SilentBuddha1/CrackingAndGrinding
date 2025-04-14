@@ -1,10 +1,11 @@
 const express = require("express");
 const {UserModel, TodoModel} = require("./db");
-const jwt = require("jsonwebtoen");
+const jwt = require("jsonwebtoken");
+const mongoose = require('mongoose');
 
 const secret = "language";
 
-
+mongoose.connect("mongodb+srv://ramchandra:PassWord2000@cluster0.bdpgiol.mongodb.net/")
 const app = express();
 app.use(express.json());
 
@@ -13,7 +14,7 @@ app.post("/signup", async function(req, res){
     const password = req.body.password;
     const name = req.body.name;
     
-    await UserModel.insert({
+    await UserModel.create({
         email: email,
         password: password,
         name: name
