@@ -10,7 +10,13 @@ app.post("/signin", function(req, res){
 
 })
 
-app.get("/todo")
+app.post("/todo", function(req, res){
+
+})
+
+app.get("/todos", function(req, res){
+    
+})
 
 app.listen(3000, () => {
     console.log("Server is running in port 3000");
