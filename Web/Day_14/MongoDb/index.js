@@ -15,7 +15,7 @@ function auth(req, res, next){
     const response = jwt.verify(token, secret);
 
     if(response){
-        req.userId = response.userId;
+        req.userId = response.id;
         next();
     }else{
         res.status(403).json({
@@ -51,7 +51,7 @@ app.post("/signin", async function(req, res){
     
     if(user){
         const token = jwt.sign({
-            id: user._id
+            id: user._id.toString()
         }, secret);
         res.json({
             message: "You successfully signed in ",
@@ -66,17 +66,27 @@ app.post("/signin", async function(req, res){
 
 app.post("/todo",auth, function(req, res){
     const userId = req.userId;
+    const title = req.body.title;
+
+    TodoModel.create({
+        title,
+        userId
+    })
 
     res.json({
         userId: userId
     })
 });
 
-app.get("/todos",auth, function(req, res){
+app.get("/todos",auth, async function(req, res){
     const userId = req.userId;
 
-    res.json({
+    const todos = await TodoModel.find({
         userId: userId
+    })
+
+    res.json({
+        userId: todos
     })
 });
 
