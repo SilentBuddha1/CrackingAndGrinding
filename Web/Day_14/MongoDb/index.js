@@ -9,6 +9,21 @@ mongoose.connect("mongodb+srv://ramchandra:PassWord2000@cluster0.bdpgiol.mongodb
 const app = express();
 app.use(express.json());
 
+function auth(req, res, next){
+    const token = req.headers.token;
+    
+    const response = jwt.verify(token, secret);
+
+    if(response){
+        req.userId = response.userId;
+        next();
+    }else{
+        res.status(403).json({
+            message: "Token is Invalided"
+        })
+    }
+}
+
 app.post("/signup", async function(req, res){
     const email = req.body.email;
     const password = req.body.password;
@@ -49,14 +64,22 @@ app.post("/signin", async function(req, res){
     }
 })
 
-app.post("/todo", function(req, res){
+app.post("/todo",auth, function(req, res){
+    const userId = req.userId;
 
-})
+    res.json({
+        userId: userId
+    })
+});
 
-app.get("/todos", function(req, res){
+app.get("/todos",auth, function(req, res){
+    const userId = req.userId;
 
-})
+    res.json({
+        userId: userId
+    })
+});
 
 app.listen(3000, () => {
     console.log("Server is running in port 3000");
-})
+});
