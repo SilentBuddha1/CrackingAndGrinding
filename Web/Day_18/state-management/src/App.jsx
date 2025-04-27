@@ -1,39 +1,47 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useState, useContext, createContext,  } from "react";
 import "./App.css";
 
+const BulbContext = createContext();
+
 function App() {
+  const [isLight, setisLight] = useState(false);
   return (
     <div>
+      <BulbContext.Provider value={{
+        isLight: isLight,
+        setisLight: setisLight
+      }}>
       <Light />
+      </BulbContext.Provider>
     </div>
   );
 }
 
 function Light() {
-  const [isLight, setisLight] = useState(false);
+  
   return (
     <>
-      <BulbState bulbOn={isLight} />
-      <ToggleBulbState buldOn={isLight} setBulbOn={setisLight} />
+      <BulbState/>
+      <ToggleBulbState/>
     </>
   );
 }
 
-function BulbState({ bulbOn }) {
+function BulbState() {
+  const {isLight} = useContext(BulbContext);
   return (
     <div>
-      <h1>Light is {bulbOn ? "ON" : "OFF"}</h1>
+      <h1>Light is {isLight ? "ON" : "OFF"}</h1>
     </div>
   );
 }
 
-function ToggleBulbState({ buldOn, setBulbOn }) {
+function ToggleBulbState() {
+  const {isLight, setisLight} = useContext(BulbContext);
   return (
     <div>
-      <button onClick={() => setBulbOn(!buldOn)}>
-        {buldOn ? "Turn Off" : "Turn On"}
+      <button onClick={() => setisLight(!isLight)}>
+        {isLight ? "Turn Off" : "Turn On"}
       </button>
     </div>
   );
