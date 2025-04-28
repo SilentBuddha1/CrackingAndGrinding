@@ -14,6 +14,7 @@ function App() {
       <Increase />
       <Decrease />
       <Reset />
+      <button onClick={obj.promise}>Promise</button>
     </>
   );
 }
