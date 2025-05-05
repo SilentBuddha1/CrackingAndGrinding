@@ -1,0 +1,22 @@
+🔧 Phase 1: The Grind Begins
+Stack Focus:
+PostgreSQL 🐘
+Next.js ⚛️
+TypeScript 🔷
+
+Goal: Build strong foundations — backend, frontend, and type safety.
+
+🛒 Phase 2: 🛠️ Minor Project – First Refinement
+Till now: Node.js + JavaScript
+Now: Bun + TypeScript ⚡
+
+Coming Soon: Full-Stack E-commerce 💼
+
+Tech Stack:
+
+PostgreSQL
+Next.js
+React
+TypeScript
+
+Vision: A production-ready, scalable e-commerce app — clean code, solid architecture, and great UI/UX.
