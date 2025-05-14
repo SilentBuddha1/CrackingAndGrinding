@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy";
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    padding: 0.1px;
+    height: 100%;
+    width: 100%;
+    background-color: #f8f8f8;
+    position: relative;
+}
+
+#nav {
+    height: 11vh;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 40px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav h1{
+    /* background-color: red; */
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "monument";
+    font-size: 40px;
+    letter-spacing: -1px;
+}
+
+#nav h2{
+    /* background-color:  red; */
+    height: 100%;
+    width: 23%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #000;
+    font-weight: 600;
+}
+
+#nav h2:nth-last-child(1) {
+        width: 10%;
+        /* background: #000; */
+}
