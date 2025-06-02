@@ -3,6 +3,7 @@ import './App.css'
 import Todo from './components/todo'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
+import AddForm from './components/AddForm'
 
 function App() {
   
@@ -11,6 +12,7 @@ function App() {
     <>
     <Provider store={store}>
       <Todo/>
+      <AddForm/>
       </Provider>
     </>
   ) 
