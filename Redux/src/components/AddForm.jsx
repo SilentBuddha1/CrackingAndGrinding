@@ -9,9 +9,9 @@ export default function AddForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!task.trim()) return; // Prevent empty tasks
+    if (!task.trim()) return; 
     dispatch(addTodo(task));
-    setTask(''); // Clear the state
+    setTask('');
   };
 
   return (
