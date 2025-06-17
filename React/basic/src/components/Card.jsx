@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Ram, Shyam, Hari, Gita } from "../content/content";
+import { Ram, Shyam, Hari, Gita} from "../content/content";
+import Hello from "./Hello"
 
 const Card = () => {
     const [data, setdata] = useState("");
@@ -10,6 +11,7 @@ const Card = () => {
         <button onClick={() => setdata(Shyam)}>Shyam</button>
         <button onClick={() => setdata(Hari)}>Hari</button>
         <button onClick={() => setdata(Gita)}>Gita</button>
+        <button onClick={() => setdata(<Hello/>)}>Hello</button>
       </div>
       <div>{data}</div>
     </div>
